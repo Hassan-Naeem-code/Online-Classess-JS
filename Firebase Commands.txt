@@ -1,0 +1,22 @@
+open firebase.google.com
+
+signin using your email
+
+Add project
+
+
+2nd milestone
+oepn nodejs.org
+download stable version
+install
+
+3rd milestone
+check for node version (using node --version or node -v)
+check for npm version (using npm --version or npm -v)
+install firebase using (npm install --global firebase-tools)
+
+4th milestone
+
+firebase login
+firebase init
+firebase deploy
