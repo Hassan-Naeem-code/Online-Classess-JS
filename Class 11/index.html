@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Class 10</h1>
+    <h3>Making A Calculator</h3>
+
+    <input type="text" id="calculate_value" />
+    <div class="buttons" id="buttons">
+      <div class="row">
+        <button onclick="input(7)">7</button>
+        <button onclick="input(8)">8</button>
+        <button onclick="input(9)">9</button>
+        <button type="button" onclick=" operator('+')">+</button>
+      </div>
+      <div class="row">
+        <button onclick="input(4)">4</button>
+        <button onclick="input(5)">5</button>
+        <button onclick="input(6)">6</button>
+        <button type="button" onclick=" operator('-')">-</button>
+      </div>
+      <div class="row">
+        <button onclick="input(1)">1</button>
+        <button onclick="input(2)">2</button>
+        <button onclick="input(3)">3</button>
+        <button type="button" onclick=" operator('*')">*</button>
+      </div>
+      <div class="row">
+        <button onclick="input(0)">0</button>
+        <button type="button" onclick="clearCalculator()">C</button>
+        <button type="button" onclick=" operator('/')">/</button>
+        <button type="button" onclick=" getResult()">=</button>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
