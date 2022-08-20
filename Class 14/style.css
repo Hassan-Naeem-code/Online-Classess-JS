@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.boxes-placement {
+  display: flex;
+  justify-content: center;
+}
+
+.boxes {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #000;
+}
+.box-one {
+  background-color: red;
+}
+.box-two {
+  background-color: green;
+}
+.box-three {
+  background-color: blue;
+}
+.box-four {
+  background-color: yellow;
+}
