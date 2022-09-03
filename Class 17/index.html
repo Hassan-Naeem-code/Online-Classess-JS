@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 17</title>
+  </head>
+  <body>
+    <h1>Class 17</h1>
+
+    <div class="container">
+      <div class="form-group">
+        <label for="name">Enter Your Name*</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="fatherName">Enter Your Father Name*</label>
+        <input type="text" name="fatherName" id="fatherName" required />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-lg btn-info" onclick="sendData()">
+          Send Data
+        </button>
+      </div>
+    </div>
+  </body>
+  <script
+    defer
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
+  ></script>
+  <script
+    defer
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"
+  ></script>
+  <script
+    defer
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"
+  ></script>
+  <script
+    defer
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"
+  ></script>
+  <script defer src="init-firebase.js"></script>
+  <script defer src="index.js"></script>
+</html>
