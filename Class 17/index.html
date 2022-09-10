@@ -5,26 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class 17</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      .img-responsive{
+        width: 50px;
+        height: 50px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Class 17</h1>
-
-    <div class="container">
-      <div class="form-group">
+    <div class="container text-center">
+      <h1>Data Get From Firebase</h1>
+      <div class="form-group mt-4" id="form-group"></div>
+      <div class="form-group mt-4">
         <label for="name">Enter Your Name*</label>
-        <input type="text" name="name" id="name" required />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          required
+        />
       </div>
-      <div class="form-group">
+      <div class="form-group mt-4">
         <label for="fatherName">Enter Your Father Name*</label>
-        <input type="text" name="fatherName" id="fatherName" required />
+        <input
+          type="text"
+          name="fatherName"
+          id="fatherName"
+          class="form-control"
+          required
+        />
       </div>
-      <div class="form-group">
-        <button class="btn btn-lg btn-info" onclick="sendData()">
+      <div class="form-group mt-4">
+        <button class="btn btn-lg btn-info w-100" onclick="sendData()">
           Send Data
         </button>
       </div>
     </div>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"
+  ></script>
   <script
     defer
     src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
