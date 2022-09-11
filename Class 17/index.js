@@ -1,5 +1,6 @@
 // Initialize Cloud Firestore and get a reference to the service
 const database = firebase.firestore();
+
 let myName = document.getElementById("name");
 let fatherName = document.getElementById("fatherName");
 let getSubmitButton = document.getElementById("get-submit-button");
@@ -9,7 +10,7 @@ let unsubscribe;
 let editElementId;
 
 window.addEventListener("load", () => {
-  unsubscribe = database.collection("users").onSnapshot((snapshot) => {
+  unsubscribe = database.collection("todos").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       if (change.type === "added") {
         console.log("New users: ", change.doc.data());
@@ -64,7 +65,7 @@ const pressDeleteUser = (dataForUser) => {
   const elementToGetId = dataForUser.id;
   const elementParent = dataForUser.parentElement;
   database
-    .collection("users")
+    .collection("todos")
     .doc(elementToGetId)
     .delete()
     .then(() => {
@@ -90,7 +91,7 @@ const pressEditUser = (user) => {
 };
 const editUser = () => {
   database
-    .collection("users")
+    .collection("todos")
     .doc(editElementId)
     .set({
       name: myName.value,
@@ -110,7 +111,7 @@ const editUser = () => {
 };
 const sendData = () => {
   database
-    .collection("users")
+    .collection("todos")
     .add({
       name: myName.value,
       fatherName: fatherName.value,
@@ -118,7 +119,7 @@ const sendData = () => {
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
       database
-        .collection("users")
+        .collection("todos")
         .doc(docRef.id)
         .set({
           name: myName.value,
