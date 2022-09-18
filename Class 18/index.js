@@ -2,6 +2,8 @@
 const auth = firebase.auth();
 //  Initialize Cloud Firestore and get a reference to the service
 const database = firebase.firestore();
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const storage = firebase.storage();
 
 let myName = document.getElementById("name");
 let fatherName = document.getElementById("fatherName");
@@ -18,7 +20,7 @@ window.addEventListener("load", function () {
       var uid = user.uid;
       if (currentLocation.href.includes("home")) {
       } else {
-        currentLocation.href = "home.html";
+        // currentLocation.href = "home.html";
       }
     }
   });
@@ -77,6 +79,7 @@ const loginUser = () => {
       // Signed in
       var user = userCredential.user;
       console.log("loginUser user", user);
+      currentLocation.href = "home.html";
       // ...
     })
     .catch((error) => {
@@ -88,5 +91,30 @@ const signOut = () => {
   auth.signOut().then(function () {
     localStorage.clear();
     currentLocation.href = "login.html";
+  });
+};
+
+const uploadFiles = () => {
+  const getFiles = document.getElementById("file").files[0];
+  console.log("getFiles", getFiles);
+  const imagesRef = storage.ref().child("images/" + getFiles.name);
+  console.log("imagesRef", imagesRef);
+  imagesRef.put(getFiles).then((data) => {
+    data.ref.getDownloadURL().then((url) => {
+      // do whatever you want with url
+      console.log("url=>", url);
+      database
+        .collection("users")
+        .add({
+          user_image: url,
+          uid: auth.currentUser.uid,
+        })
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
+    });
   });
 };

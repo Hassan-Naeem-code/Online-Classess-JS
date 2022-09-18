@@ -21,6 +21,13 @@
             SignOut
           </button>
         </div>
+        <div class="col-md-12">
+          <h4 class="text-muted">Upload Files</h4>
+          <input type="file" name="file" id="file" class="form-control" />
+          <button type="button" class="btn btn-danger" onclick="uploadFiles()">
+            Upload Files
+          </button>
+        </div>
       </div>
     </div>
   </body>
@@ -49,6 +56,10 @@
   <script
     defer
     src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"
+  ></script>
+  <script
+    defer
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"
   ></script>
   <script defer src="init-firebase.js"></script>
   <script defer src="index.js"></script>
