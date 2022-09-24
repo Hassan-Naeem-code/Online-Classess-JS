@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*___________________________________________Navbar________________________________________________ */
+.header {
+  background-color: #f7f8f9;
+  box-shadow: 0 0 2px grey;
+  position: sticky;
+  top: 0;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 1300px;
+  margin: auto;
+  height: 70px;
+}
+
+.login-button {
+  margin-left: 60px;
+}
+.login-button p {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+}
+
+.navbar img {
+  width: 70px;
+}
+.location-box {
+  width: 250px;
+  margin-left: 70px;
+}
+.select-location i {
+  font-size: 15px;
+  transition: all 0.3s;
+}
+.select-location {
+  width: 100%;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+.option {
+  display: flex;
+  padding: 10px;
+  width: 250px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.option:hover {
+  background-color: #c7dcff;
+}
+.option p {
+  margin-left: 10px;
+  color: #444444;
+}
+.option .blue {
+  color: #3a77ff;
+}
+option i {
+  color: #839a9c;
+}
+.option-box {
+  box-shadow: 0 0 10px grey;
+  background-color: white;
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+.show {
+  display: block;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.search-box {
+  display: flex;
+  margin-left: 30px;
+}
+.search-box i {
+  background-color: black;
+  color: white;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 0 6px 6px 0;
+}
+.search {
+  padding: 10px;
+  width: 570px;
+  font-size: 15px;
+  border: 2px solid black;
+  border-radius: 6px 0 0 6px;
+}
+.sell_button button {
+  margin-left: 70px;
+  border-style: solid;
+  border-width: 5px;
+  border-top-color: #23e5db;
+  border-left-color: #ffce32;
+  border-right-color: #3a77ff;
+  border-bottom-color: #3a77ff;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  display: flex;
+}
+
+/* ____________________________navbar 2___________________________ */
+
+.navbar2-parent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar2 {
+  width: 1299px;
+}
+.navbar2 ul {
+  display: flex;
+  list-style: none;
+  padding: 23px 0px;
+}
+.navbar2 ul li {
+  font-size: 15px;
+  padding: 0 10px;
+}
+.navbar2 ul h5 {
+  cursor: pointer;
+}
+.move-icon {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.navbar2 ul li:hover {
+  cursor: pointer;
+  color: #23e5db;
+  transition: 0.3s;
+}
+
+/* ___________________________________________Top image________________________________________________ */
+
+.top_image {
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+.top_image img {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* ___________________________________________Product________________________________________________ */
+
+.First_row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1300px;
+  margin: auto;
+  margin-top: 35px;
+}
+.img-box {
+  position: relative;
+  z-index: -1;
+  background-color: #222;
+}
+.box img {
+  display: flex;
+  align-self: center;
+  position: relative;
+  width: 200px;
+  margin: auto;
+}
+.grow {
+  height: 150px;
+}
+.less {
+  height: 148px;
+}
+.box {
+  border: 1px solid rgb(197, 196, 196);
+  width: 312px;
+  height: 250px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.box:hover {
+  border: 1px solid rgb(138, 137, 139);
+}
+.box h2 {
+  padding: 0px 0 0 20px;
+}
+.box p {
+  padding: 10px 0 10px 20px;
+  color: #6f8a94;
+  font-size: 14px;
+}
+.addres_data {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.addres_data p {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+/* _______________________________Download_picture______________________________________  */
+
+.download_app {
+  background-color: #f7f8f9;
+}
+.download {
+  margin: 100px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.images {
+  width: 400px;
+}
+.text {
+  border-right: 2px solid #cacdce;
+}
+.text h1 {
+  padding: 20px 20px 10px 20px;
+  font-size: 35px;
+}
+.text p {
+  padding: 10px 20px 20px 20px;
+  font-size: 20px;
+}
+.download_store p {
+  padding: 20px 20px 20px 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+.download_store {
+  padding-left: 30px;
+}
+.download_store img {
+  width: 140px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+/* ______________________________footer_______________________________________  */
+
+.Main_footerP {
+  background-color: #ebeeef;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  margin: auto;
+}
+.footer_box h2 {
+  font-size: 17px;
+  margin: 10px 0 15px 0;
+  cursor: pointer;
+}
+.footer_box p {
+  margin: 8px 0 8px 0;
+  cursor: pointer;
+}
+
+/* ___________________________footer 2________________________________________________ */
+
+.footer2 {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #002f34;
+}
+.footer2 p {
+  color: white;
+  position: relative;
+  margin-right: 500px;
+  font-size: 15px;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX Ad Post</title>
+    <link rel="stylesheet" href="css/addpost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+        <div class="navbar">
+            <i class="fa-solid fa-arrow-left"></i><img src="images/olx_logo.png" alt="">
+        </div>
+        <div class="heading">
+            <h3>POST YOUR AD</h3>
+        </div>
+        <div class="container">
+            <div class="add-form">
+            <div class="select-category">
+              <h3>SELECTED CATEGORY</h3>
+              <p>Mobiles /  Mobile Phones<a href="#">Change</a></p>
+              <hr>
+            </div>
+            <div class="include-details">
+                <h3>INCLUDE SOME DETAILS</h3>
+                <p>Add title</p>
+                <div class="input-box">
+                    <input class="detail-box" type="text" name="postTitle" id="postTitle" />
+                </div>
+                <div class="message">
+                    <p>Mention the key features of your item (e.g. brand, model, age, type)</p>
+                    <p>0/70</p>
+                </div>
+            </div>
+            <div class="description">
+                <p>Description</p>
+                <div class="description-box">
+                    <input class="description-input" type="text" name="postDescription" id="postDescription" />
+                </div>
+                <div class="message2">
+                    <span>Include condition, features and reason for selling</span>
+                    <span>0/4096</span>
+                </div>
+                <div class="brand">
+                    <p>Brand</p>
+                    <div  onclick="toggle()" class="brand-box" >
+                        <div id="brand-box" class="brand-input"><div class="icon"><i id="move-icon" class="fa-solid fa-chevron-down"></i></div></div>
+                    </div>
+                    <div class="select-brand-parent">
+                        <div id="dropdown" class="select-brand">
+                         <div class="brand-search">
+                            <input class="search-box" type="text" placeholder="Search" />
+                         </div>
+                         <ul id="list">
+                            <li class="bold">Popular Brand</li>
+                            <li onclick="select_brand('Apple iPhone')">Apple iPhone</li>
+                            <li onclick="select_brand('Samsung Mobile')">Samsung Mobile</li>
+                            <li onclick="select_brand('Vivo')">Vivo</li>
+                            <li class="bold">Others</li>
+                            <li onclick="select_brand('Acer')">Acer</li>
+                            <li onclick="select_brand('Motorola')">Motorola</li>
+                            <li onclick="select_brand('Nokia')">Nokia</li>
+                            <li onclick="select_brand('One Plus')">One Plus</li>
+                            <li onclick="select_brand('Panasonic')">Panasonic</li>
+                            <li onclick="select_brand('OPPO')">OPPO</li>
+                            <li onclick="select_brand('QMobile')">QMobile</li>
+                            <li onclick="select_brand('Realme')">Realme</li>
+                            <li onclick="select_brand('RIVO')">RIVO</li>
+                            <li onclick="select_brand('Sony')">Sony</li>
+                            <li onclick="select_brand('Techno')">Techno</li>
+                            <li onclick="select_brand('HTC')">HTC</li>
+                            <li onclick="select_brand('Voice')">Voice</li>
+                            <li onclick="select_brand('Zte')">Zte</li>
+                            <li onclick="select_brand('Other Mobiles')">Other Mobiles</li>
+                         </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="set-price-box">
+                <h3>SET A PRICE</h3>
+                <p>Price</p>
+                <div class="set-price">
+                    <input class="set-price-input" type="text" placeholder="Rs |" name="commodityPrice" id="commodityPrice" />
+                </div>
+            </div>
+            <hr>
+            <div class="upload-photos">
+                 <h3>UPLOAD UP TO 20 PHOTOS</h3>
+                 <div class="photo-row1">
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                 </div>
+                 <div class="photo-row2">
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                    <div class="photo"><img src="images/icon.svg" alt=""></div>
+                 </div>
+                 <p>For the cover picture we recommend using the landscape mode.</p>
+            </div>
+            <hr>
+            <div class="ads-location">
+                <h3>YOUR AD'S LOCATION</h3>
+                <p>Location</p>
+                <div class="ads-location-box">
+                    <div onclick="toggle2()" class="ads-location-input">
+                        <div id="location-box" class="location-input"><div class="icon"><i id="move-icon2" class="fa-solid fa-chevron-down"></i></div></div>
+                    </div>
+                </div>
+                <div class="ads-location-parent">
+                    <div id="hidden" class="ads-location-dropdown">
+                        <div class="location-search">
+                            <input class="search-box" type="text" placeholder="Search">
+                         </div>
+                    <ul>
+                        <li onclick="select_location('Use Current Location')" class="color bold"><i class="fa-solid fa-location-crosshairs blue"></i>Use Current Location</li>
+                        <li class="bold">Choose Region</li>
+                        <li onclick="select_location('Azad Kashmir, Pakistan')">Azad Kashmir, Pakistan</li>
+                        <li onclick="select_location('Balochistan, Pakistan')">Balochistan, Pakistan</li>
+                        <li onclick="select_location('Islamabad Capital Territory, Pakistan')">Islamabad Capital Territory, Pakistan</li>
+                        <li onclick="select_location('Khyber Pakhtunkhwa, Pakistan')">Khyber Pakhtunkhwa, Pakistan</li>
+                        <li onclick="select_location('Northern Areas, Pakistan')">Northern Areas, Pakistan</li>
+                        <li onclick="select_location('Punjab, Pakistan')">Punjab, Pakistan</li>
+                        <li onclick="select_location('Sindh, Pakistan')">Sindh, Pakistan</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="review-details">
+                <h3>REVIEW YOUR DETAILS</h3>
+                <div class="user-img-box">
+                    <img src="images/pic3.png" alt="">
+                    <div class="name-box">
+                        <p>Name</p>
+                        <input class="user-name" type="text" placeholder="OLX User" name="postUserName" id="postUserName" />
+                    </div>
+                </div>
+                <div class="verify-div">
+                    <h3>Let's verify your account</h3>
+                    <p>Mobile Phone Number</p>
+                    <div class="verify-box">
+                        <input class="verify-input" type="text" placeholder="+92 | Phone number" name="postUserNumber" id="postUserNumber" />
+                    </div>
+                </div>
+                <div class="show-number">
+                    <p>Show my phone number in ads</p>
+                </div>
+            </div>
+            <hr>
+            <div class="last-button">
+                <button class="btn" type="button" onclick="postAdd(this)">Post now</button>
+            </div>
+            <!-- <hr> -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+<script src="js/init-firebase.js"></script>
+<script src="js/addpost.js"></script>
+</html>
