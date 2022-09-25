@@ -14,6 +14,8 @@ let text = document.getElementById("text");
 let list = document.getElementById("list");
 let search_blue = document.getElementById("search-box");
 let header = document.getElementById("header");
+let bodyPostWrapper = document.getElementById("First_row");
+let unsubscribe;
 
 function show() {
   list.classList.toggle("show");
@@ -54,6 +56,32 @@ window.addEventListener("load", () => {
       printHeader();
     }
   });
+  unsubscribe = database.collection("post").onSnapshot((snapshot) => {
+    snapshot.docChanges().forEach((change) => {
+      if (change.type === "added") {
+        console.log("New post: ", change.doc.data());
+        const dataFromFirebase = change.doc.data();
+        if (dataFromFirebase) {
+          getAllPosts(dataFromFirebase);
+        }
+      }
+      // if (change.type === "modified") {
+      //   console.log("Modified users: ", change.doc.data());
+      //   const dataFromFirebase = change.doc.data();
+      //   if (dataFromFirebase) {
+      //     printUiForUsers(dataFromFirebase);
+      //   }
+      // }
+      // if (change.type === "removed") {
+      //   const dataFromFirebase = change.doc.data();
+      //   console.log("dataFromFirebase delete", dataFromFirebase);
+      // }
+    });
+  });
+  return () => {
+    // Stop listening to changes
+    unsubscribe();
+  };
 });
 function printHeader(user) {
   const parentNavbar = document.createElement("div");
@@ -140,7 +168,7 @@ function printHeader(user) {
   const sellWrapperText = document.createElement("p");
   if (user) {
     sellWrapperText.setAttribute("onclick", "addpost()");
-  }else{
+  } else {
     sellWrapperText.setAttribute("onclick", "login()");
   }
   sellWrapperText.innerHTML = "SELL";
@@ -155,3 +183,30 @@ function printHeader(user) {
   header.appendChild(parentNavbar);
 }
 /* ___________________________________________Product________________________________________________ */
+function getAllPosts(data) {
+  const postWrapper = document.createElement("div");
+  postWrapper.setAttribute("class", "box");
+  const postInnerWrapperOne = document.createElement("div");
+  postInnerWrapperOne.setAttribute("class", "img-box");
+  const postInnerWrapperImage = document.createElement("img");
+  postInnerWrapperImage.setAttribute("src", data?.postImage);
+  postInnerWrapperImage.setAttribute("alt", data?.postImage);
+  postInnerWrapperOne.appendChild(postInnerWrapperImage);
+  const postInnerWrapperSecond = document.createElement("div");
+  postInnerWrapperSecond.setAttribute("class", "addres_data");
+  const postInnerWrapperSecondLocation = document.createElement("p");
+  postInnerWrapperSecondLocation.innerHTML = data?.postLocation;
+  postInnerWrapperSecond.appendChild(postInnerWrapperSecondLocation);
+  const postInnerHeading = document.createElement("p");
+  postInnerHeading.innerHTML = data?.postTitle;
+  const postInnerDescription = document.createElement("p");
+  postInnerDescription.innerHTML = data?.postDescription;
+  const postInnerPrice = document.createElement("h2");
+  postInnerPrice.innerHTML = data?.postPrice;
+  postWrapper.appendChild(postInnerWrapperOne);
+  postWrapper.appendChild(postInnerHeading);
+  postWrapper.appendChild(postInnerDescription);
+  postWrapper.appendChild(postInnerPrice);
+  postWrapper.appendChild(postInnerWrapperSecond);
+  bodyPostWrapper.appendChild(postWrapper);
+}

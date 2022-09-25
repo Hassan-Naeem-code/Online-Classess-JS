@@ -58,6 +58,7 @@ function postAdd(e) {
   const postLocation = location_box;
   const postUserName = document.getElementById("postUserName");
   const postUserNumber = document.getElementById("postUserNumber");
+  const galleryImageFirst = document.getElementById("photo_1");
   if (postTitle.value == "") {
     alert("Please enter post title");
     return;
@@ -86,24 +87,37 @@ function postAdd(e) {
     alert("Please enter post host number");
     return;
   }
-  database
-    .collection("post")
-    .doc(currentUser.uid)
-    .set({
-      postTitle: postTitle.value,
-      postDescription: postDescription.value,
-      postBrand: postBrand.innerHTML,
-      postPrice: postPrice.value,
-      postLocation: postLocation.innerHTML,
-      postUserName: postUserName.value,
-      postUserNumber: postUserNumber.value,
-      user_id: currentUser.uid,
-    })
-    .then((doc) => {
-      alert("Post Added Successfully");
-      window.location.href = "olx.html";
-    })
-    .catch((error) => {
-      console.log("error is", error);
+  if (galleryImageFirst.files?.length < 0) {
+    alert("Please upload a gallery image");
+    return;
+  }
+  const getFiles = galleryImageFirst.files[0];
+  console.log("getFiles", getFiles);
+  const imagesRef = storage.ref().child("images/" + getFiles.name);
+  imagesRef.put(getFiles).then((data) => {
+    data.ref.getDownloadURL().then((url) => {
+      // do whatever you want with url
+      console.log("url=>", url);
+      database
+        .collection("post")
+        .add({
+          postTitle: postTitle.value,
+          postDescription: postDescription.value,
+          postBrand: postBrand.innerHTML,
+          postPrice: postPrice.value,
+          postLocation: postLocation.innerHTML,
+          postUserName: postUserName.value,
+          postUserNumber: postUserNumber.value,
+          postImage: url,
+          user_id: currentUser.uid,
+        })
+        .then((doc) => {
+          alert("Post Added Successfully");
+          window.location.href = "olx.html";
+        })
+        .catch((error) => {
+          console.log("error is", error);
+        });
     });
+  });
 }
