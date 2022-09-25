@@ -59,7 +59,6 @@ window.addEventListener("load", () => {
   unsubscribe = database.collection("post").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       if (change.type === "added") {
-        console.log("New post: ", change.doc.data());
         const dataFromFirebase = change.doc.data();
         if (dataFromFirebase) {
           getAllPosts(dataFromFirebase);
@@ -186,6 +185,7 @@ function printHeader(user) {
 function getAllPosts(data) {
   const postWrapper = document.createElement("div");
   postWrapper.setAttribute("class", "box");
+  postWrapper.setAttribute("id", data?.user_id);
   const postInnerWrapperOne = document.createElement("div");
   postInnerWrapperOne.setAttribute("class", "img-box");
   const postInnerWrapperImage = document.createElement("img");
