@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="title">
+          <img
+            class="hamburger"
+            onclick="signOut()"
+            src="assets/icon.png"
+            width="35px"
+          />
+          <h1>Chit Chat</h1>
+        </div>
+        <button type="button" onclick="show_hide()">
+          <img class="hamburger" src="assets/hamburger2.png" width="35px" />
+        </button>
+      </div>
+      <div class="main">
+        <div class="users-window">
+          <div class="users-head">
+            <h3>People</h3>
+            <h4>3</h4>
+          </div>
+          <div class="users-list">
+            <aside>
+              <ul id="users_list"></ul>
+            </aside>
+          </div>
+        </div>
+        <div class="chat-window">
+          <div class="chats" onclick="hide_people()">
+            <div class="user-join">
+              <p><b>Hanzala</b> joined the chat</p>
+            </div>
+            <div class="message incoming-message">
+              <h5>Hanzala</h5>
+              <p>Assalamu_Alaikum Sir</p>
+            </div>
+            <div class="message outgoing-message">
+              <h5>Sir Hassan</h5>
+              <p>Walikum assalam</p>
+            </div>
+          </div>
+          <div class="user-input">
+            <input type="text" placeholder="Type your message... " />
+            <button>SEND</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="js/init-firebase.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
