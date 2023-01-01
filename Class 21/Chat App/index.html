@@ -37,19 +37,19 @@
         </div>
         <div class="chat-window">
           <div class="chats" onclick="hide_people()">
-            <div class="message incoming-message">
-              <h5>Hanzala</h5>
-              <p>Assalamu_Alaikum Sir</p>
-            </div>
-            <div class="message outgoing-message">
-              <h5>Sir Hassan</h5>
-              <p>Walikum assalam</p>
-            </div>
+            <div class="user-head" id="current_user_identification"></div>
+            <div style="width: 100%" id="chat_messages"></div>
           </div>
-          <div class="user-input">
-            <input type="text" placeholder="Type your message... " />
-            <button>SEND</button>
-          </div>
+          <form>
+            <div class="user-input">
+              <input
+                type="text"
+                placeholder="Type your message... "
+                id="getCurrentTypedMsg"
+              />
+              <button type="submit">SEND</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

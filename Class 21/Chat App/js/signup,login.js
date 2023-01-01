@@ -81,16 +81,32 @@ const loginUser = () => {
     .then((userCredential) => {
       var user = userCredential.user;
       console.log("Login User", user);
-      swal(
-        {
-          title: "Congrats!",
-          text: "Login Succesfully!",
-          type: "success",
-        },
-        function () {
-          current_location.href = "index.html";
-        }
-      );
+      database
+        .collection("users")
+        .where("user_uid", "==", user?.uid)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            localStorage.setItem(
+              "currentLoggedInUser",
+              JSON.stringify(doc.data())
+            );
+            swal(
+              {
+                title: "Congrats!",
+                text: "Login Succesfully!",
+                type: "success",
+              },
+              function () {
+                current_location.href = "index.html";
+              }
+            );
+          });
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
     })
     .catch((error) => {
       var errorCode = error.code;
