@@ -27,7 +27,16 @@
 .App-link {
   color: #61dafb;
 }
-
+.body-content {
+  background-color: coral;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
