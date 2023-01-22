@@ -6,11 +6,12 @@ import Footer from "./components/footer";
 import "./App.css";
 
 function App() {
+  const [name, setName] = React.useState("Hanzala");
   return (
     <div>
       <Header />
-      <Login />
-      <Home />
+      <Login name={name} />
+      {/* <Home /> */}
       <Footer />
     </div>
   );
