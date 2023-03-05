@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login({ name }) {
+  const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -8,6 +10,7 @@ export default function Login({ name }) {
     event.preventDefault();
     console.log("email", email);
     console.log("password", password);
+    navigate("/");
   };
   console.log("name", name);
   return (

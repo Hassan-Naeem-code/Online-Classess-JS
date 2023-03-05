@@ -1,5 +1,7 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
+import NotFoundView from "./screens/app/NotFoundView/NotFoundView";
 import Login from "./screens/authentication/login/login";
 import Home from "./screens/app/Home/home";
 import Footer from "./components/footer";
@@ -20,14 +22,21 @@ function App() {
     console.log("hello with array and having a state in it");
   }, [name]);
 
-  setName("Hello World");
+  // setName("Hello World");
   return (
-    <div>
-      <Header />
-      <Login name={name} />
-      <Home />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login name={name} />} />
+        <Route path="*" element={<NotFoundView />} />
+      </Routes>
+    </BrowserRouter>
+    // <div>
+    //   <Header />
+    //   <Login name={name} />
+    //   <Home />
+    //   <Footer />
+    // </div>
   );
 }
 
