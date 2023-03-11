@@ -5,7 +5,11 @@ export default function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <button type="button" onClick={() => navigate("/login")}>
+      <button
+        type="button"
+        onClick={() => navigate("/login")}
+        className="btn btn-primary"
+      >
         Navigate to Login
       </button>
     </div>
