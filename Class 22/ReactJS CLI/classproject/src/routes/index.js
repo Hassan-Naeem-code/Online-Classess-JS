@@ -5,12 +5,11 @@ import Home from "../screens/app/Home/home";
 import NotFoundView from "../screens/app/NotFoundView/NotFoundView";
 
 function AppRoutes() {
-  const name = "Hanzala";
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login name={name} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFoundView />} />
       </Routes>
     </BrowserRouter>

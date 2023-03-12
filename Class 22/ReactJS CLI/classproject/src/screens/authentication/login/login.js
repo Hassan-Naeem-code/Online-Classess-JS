@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ name }) {
+export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -12,7 +12,6 @@ export default function Login({ name }) {
     console.log("password", password);
     navigate("/");
   };
-  console.log("name", name);
   return (
     <div>
       <h1>Login</h1>
@@ -46,9 +45,3 @@ export default function Login({ name }) {
     </div>
   );
 }
-
-// const obj = new Object();
-// obj.name = "Hello";
-// obj.age = 40;
-
-// const { age } = obj;
