@@ -1,0 +1,1 @@
+npm i react-router-dom redux react-redux redux-thunk redux-persist redux-logger react-bootstrap
