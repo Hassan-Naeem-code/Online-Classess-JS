@@ -8,11 +8,10 @@ export function userAuth(user_data) {
     });
   };
 }
-export function userLogedOut(navigate) {
+export function userLogedOut() {
   return async (dispatch) => {
     dispatch({
       type: USER_SIGNED_OUT,
     });
-    navigate("/");
   };
 }

@@ -1,16 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userAuth } from "../../../store/actions/authAction";
 
 export default function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const submitLoginForm = (event) => {
     event.preventDefault();
-    console.log("email", email);
-    console.log("password", password);
-    navigate("/");
+    const payload = {
+      email,
+      password,
+    };
+    dispatch(userAuth(payload));
   };
   return (
     <div>
