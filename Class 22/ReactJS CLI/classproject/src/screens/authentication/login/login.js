@@ -15,7 +15,7 @@ export default function Login() {
       email,
       password,
     };
-    dispatch(userAuth(payload));
+    dispatch(userAuth(payload, navigate));
   };
   return (
     <div>

@@ -1,9 +1,9 @@
-import rootReducer from "./reducers";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
+import rootReducer from "./reducers";
 
 const enhancer = compose(applyMiddleware(thunk, logger));
 
